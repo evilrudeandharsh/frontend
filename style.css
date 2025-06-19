@@ -47,7 +47,8 @@ body {
       opacity: 0;
       transition: opacity 0.3s;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+       color: #000;
     }
 
     .tab.active .label {
@@ -140,8 +141,14 @@ body {
       display: flex;
       height: 100vh;
       width: 400vw; /* 4 times viewport width for 4 panels */
+      background: #65b2fa;
     }
-
+    .split-word {
+  display: inline-block;
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start below */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
     .horizontal-panel {
       width: 100vw;
       height: 100vh;
@@ -151,12 +158,11 @@ body {
       align-items: center;
       padding: 60px;
       box-sizing: border-box;
+      border-color: #65b2fa;
     }
 
-    .panel-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .panel-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-    .panel-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-    .panel-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+    .panel-1 { background: #65b2fa; }
+  
 
     .panel-content {
       max-width: 600px;
@@ -198,3 +204,51 @@ body {
       background: white;
       transform: scale(1.2);
     }
+.word {
+  position: relative;
+  cursor: pointer;
+  color: #007bff; /* Change color as needed */
+  margin: 0 5px; /* Add margin to create space between words */
+}
+
+.popup-box {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px; /* Adjust width as needed */
+  z-index: 10;
+  transition: opacity 0.3s ease; /* Smooth transition */
+  opacity: 0; /* Start hidden */
+}
+
+.popup-box.show {
+  display: block; /* Show the popup */
+  opacity: 1; /* Fade in */
+}
+
+#popup-hover {
+  top: 100%; /* Center vertically */
+  left: -800px; /* Position to the left */
+  transform: translateY(-50%);
+}
+
+#popup-words {
+  top: 50%; /* Center vertically */
+  right: -220px; /* Position to the right */
+  transform: translateY(-50%);
+}
+
+#popup-building {
+  top: 50%; /* Center vertically */
+  left: -220px; /* Position to the left */
+  transform: translateY(-50%);
+}
+
+#popup-web {
+  top: 50%; /* Center vertically */
+  right: -220px; /* Position to the right */
+  transform: translateY(-50%);
+}

@@ -180,3 +180,17 @@ const tabs = document.querySelectorAll('.tab');
         }
       }
     );
+const words = document.querySelectorAll('.word');
+const popups = document.querySelectorAll('.popup-box');
+words.forEach(word => {
+  word.addEventListener('mouseenter', () => {
+    const popupId = `popup-${word.dataset.word.toLowerCase()}`;
+    const popup = document.getElementById(popupId);
+    popup.classList.add('show'); // Show the popup
+  });
+  word.addEventListener('mouseleave', () => {
+    const popupId = `popup-${word.dataset.word.toLowerCase()}`;
+    const popup = document.getElementById(popupId);
+    popup.classList.remove('show'); // Hide the popup
+  });
+});
