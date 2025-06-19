@@ -1,0 +1,200 @@
+body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #222;
+      
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .tabs-container {
+      display: flex;
+      gap: 10px;
+      padding: 80px;
+      justify-content: left;
+    }
+
+    .tab {
+      background: #cfd8dc;
+      padding: 10px 14px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      transition: all 0.4s ease;
+      width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
+      height: 50px;
+     
+    }
+
+    .tab.active {
+      background: var(--color);
+      width: 300px;
+    }
+
+    .tab .icon {
+      font-size: 2.4rem;
+    }
+
+    .tab .label {
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .tab.active .label {
+      opacity: 1;
+    }
+
+    .progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      background: #000;
+      opacity: 0.2;
+      width: 0%;
+    }
+
+    .content {
+      text-align: left;
+      max-width: 600px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px 30px;
+      border-radius: 20px;
+      color: #fff;
+      transition: all 0.5s;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #e0e0e0;
+    }
+
+    .sections {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #222;
+      color: white;
+      position: relative;
+    }
+
+    .sections.with-image {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .textbox {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      font-size: clamp(40px, 8vw, 100px);
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      max-width: 90%;
+    }
+
+    /* Horizontal scroll section */
+    .horizontal-section {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .horizontal-container {
+      display: flex;
+      height: 100vh;
+      width: 400vw; /* 4 times viewport width for 4 panels */
+    }
+
+    .horizontal-panel {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      box-sizing: border-box;
+    }
+
+    .panel-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .panel-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .panel-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .panel-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+    .panel-content {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .panel-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .panel-description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* Progress indicator for horizontal scroll */
+    .scroll-progress {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+
+    .progress-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .progress-dot.active {
+      background: white;
+      transform: scale(1.2);
+    }
